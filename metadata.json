@@ -1,0 +1,6 @@
+{
+  "name": "Patricia Sáez Portfolio",
+  "description": "Professional portfolio for Digital Creator Patricia Sáez, featuring AI, creativity, and digital innovation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
