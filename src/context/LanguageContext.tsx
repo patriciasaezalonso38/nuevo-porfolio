@@ -20,7 +20,10 @@ const translations: Record<Language, Record<string, string>> = {
     navProjects: 'Proyectos',
     navEducation: 'Formación',
     navContact: 'Contacto',
-    navCV: 'CV'
+    navCV: 'CV',
+    heroCta: 'Ver proyectos',
+    heroSecondary: 'Conóceme',
+    projectsNote: 'Más proyectos en proceso · 2026'
   },
   en: {
     heroTitle: 'PATRICIA SÁEZ',
@@ -33,7 +36,10 @@ const translations: Record<Language, Record<string, string>> = {
     navProjects: 'Projects',
     navEducation: 'Education',
     navContact: 'Contact',
-    navCV: 'CV'
+    navCV: 'CV',
+    heroCta: 'View projects',
+    heroSecondary: 'About me',
+    projectsNote: 'More projects in progress · 2026'
   }
 };
 

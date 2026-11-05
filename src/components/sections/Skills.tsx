@@ -1,30 +1,4 @@
-import React from 'react';
-import { useLanguage } from '../../context/LanguageContext';
-import { motion } from 'framer-motion';
-
-export default function Skills() {
-  const { t } = useLanguage();
-  const skills = {
-    IA: ['ChatGPT', 'Google AI Studio', 'Gemini'],
-    Voz: ['ElevenLabs'],
-    Creatividad: ['Canva', 'Leonardo AI']
-  };
-
-  return (
-    <section id="skills" className="py-20 bg-[#10091C]">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-white mb-12">{t('navSkills')}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {Object.entries(skills).map(([category, items]) => (
-            <motion.div key={category} className="bg-[#1e1333] p-6 rounded-xl border border-[#A855F7]/20" whileHover={{scale:1.05}}>
-              <h3 className="text-2xl text-[#F0ABFC] mb-4">{category}</h3>
-              <ul className="text-gray-300">
-                {items.map(item => <li key={item}>{item}</li>)}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+import {motion} from 'framer-motion';
+import {useLanguage} from '../../context/LanguageContext';
+const skills=[{number:'01',title:'Inteligencia artificial',copy:'Exploro nuevas formas de pensar, crear y automatizar con IA generativa.',items:['ChatGPT','Gemini','Google AI Studio']},{number:'02',title:'Dirección creativa',copy:'Construyo conceptos visuales con intención, personalidad y una historia detrás.',items:['Canva','Leonardo AI','Storytelling']},{number:'03',title:'Experiencias digitales',copy:'Conecto estrategia y ejecución para que cada punto de contacto tenga sentido.',items:['Contenido','Prototipado','No-code']}];
+export default function Skills(){const {t}=useLanguage();return <section id="skills" className="section section-dark"><div className="section-wrap"><div className="section-heading"><div><span className="eyebrow">03 / {t('navSkills')}</span><h2 className="display">Herramientas para imaginar y hacer.</h2></div><p className="section-intro">No se trata de saber usarlo todo. Se trata de elegir la herramienta adecuada para cada idea.</p></div><div className="skill-grid">{skills.map(skill=><motion.article className="skill-card" key={skill.number} whileInView={{opacity:1,y:0}} initial={{opacity:0,y:20}} viewport={{once:true}} transition={{duration:.4}}><span className="number mono">{skill.number}</span><h3>{skill.title}</h3><p>{skill.copy}</p><div className="skill-list">{skill.items.map(item=><span key={item}>{item}</span>)}</div></motion.article>)}</div></div></section>}

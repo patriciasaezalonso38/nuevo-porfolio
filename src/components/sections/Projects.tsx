@@ -1,22 +1,4 @@
-import React from 'react';
-import { useLanguage } from '../../context/LanguageContext';
-import { motion } from 'framer-motion';
-
-export default function Projects() {
-  const { t } = useLanguage();
-  return (
-    <section id="projects" className="py-20 bg-[#10091C]">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-white mb-12">{t('navProjects')}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[1,2,3].map(i => (
-            <motion.div key={i} className="bg-[#1e1333] p-6 rounded-xl border border-[#A855F7]/20" whileHover={{y:-10}}>
-              <h3 className="text-xl text-white mb-2">Proyecto {i}</h3>
-              <p className="text-gray-400">Descripción provisional del proyecto {i}.</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+import {motion} from 'framer-motion';
+import {useLanguage} from '../../context/LanguageContext';
+const projects=[{type:'01 / Concepto + IA',title:'La pausa también crea',copy:'Una exploración visual sobre descanso, atención y el valor de bajar el ritmo.',color:'one'},{type:'02 / Dirección creativa',title:'Futuro cotidiano',copy:'Un lenguaje visual para acercar la inteligencia artificial a las personas.',color:'two'},{type:'03 / Narrativa digital',title:'Ideas en movimiento',copy:'Contenido, tono y sistema visual para una comunidad que no deja de aprender.',color:'three'}];
+export default function Projects(){const {t}=useLanguage();return <section id="projects" className="section"><div className="section-wrap"><div className="section-heading"><div><span className="eyebrow">Selected work</span><h2 className="display">Un vistazo a lo que estoy construyendo.</h2></div><p className="section-intro">Proyectos personales y colaboraciones que cruzan creatividad, cultura y tecnología.</p></div><div className="project-list">{projects.map((project,index)=><motion.a href="#contact" className="project-card" key={project.title} initial={{opacity:0,y:15}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:index*.08}}><div className={`project-image ${project.color}`}/><div className="project-meta"><span className="eyebrow">{project.type}</span><h3>{project.title}</h3><p>{project.copy}</p></div><span className="arrow">↗</span></motion.a>)}</div><p className="mono" style={{marginTop:28,color:'#85807a',fontSize:10}}>{t('projectsNote')}</p></div></section>}

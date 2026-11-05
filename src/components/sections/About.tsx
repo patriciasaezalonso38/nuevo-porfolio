@@ -1,19 +1,3 @@
-import React from 'react';
-import { useLanguage } from '../../context/LanguageContext';
-import { motion } from 'framer-motion';
-
-export default function About() {
-  const { t } = useLanguage();
-  return (
-    <section id="about" className="py-20 bg-[#10091C]">
-      <div className="container mx-auto px-6">
-        <motion.h2 className="text-4xl font-bold text-white mb-8" initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}}>
-          {t('navAbout')}
-        </motion.h2>
-        <p className="text-gray-300 max-w-2xl text-lg">
-          [ESPACIO EDITABLE: Presentación personal, historia profesional, intereses, objetivos, motivación por la IA, visión de futuro.]
-        </p>
-      </div>
-    </section>
-  );
-}
+import {motion} from 'framer-motion';
+import {useLanguage} from '../../context/LanguageContext';
+export default function About(){const {t}=useLanguage();return <section id="about" className="section"><div className="section-wrap"><div className="section-heading"><div><span className="eyebrow">02 / {t('navAbout')}</span><h2 className="display">La tecnología también puede tener alma.</h2></div><p className="section-intro">Una mezcla de pensamiento estratégico, sensibilidad visual y curiosidad por lo que viene.</p></div><div className="about-grid"><motion.p className="about-lead" initial={{opacity:0,y:18}} whileInView={{opacity:1,y:0}} viewport={{once:true}}>Creo en las ideas que conectan. En usar la inteligencia artificial como una extensión de la creatividad, no como un sustituto.</motion.p><div className="about-text"><p>Trabajo entre el diseño, la comunicación y las nuevas herramientas digitales. Me interesa traducir lo complejo en algo claro, bello y útil: una identidad, una historia de marca o una experiencia que la gente recuerde.</p><p>Mi forma de trabajar combina exploración rápida, criterio y mucho cuidado por los detalles. Cada proyecto empieza con una buena pregunta.</p><div className="quote">«La curiosidad es mi herramienta favorita.»</div></div></div><div className="stats"><div className="stat"><strong>03</strong><span className="mono">Áreas de especialidad</span></div><div className="stat"><strong>∞</strong><span className="mono">Ganas de aprender</span></div><div className="stat"><strong>24/7</strong><span className="mono">Ideas en proceso</span></div></div></div></section>}
